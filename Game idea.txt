@@ -1,0 +1,8 @@
+-make it crash
+	-2D car 
+	-2D bg
+	-2D trafick lights
+	-collision script life system (no me)
+	-point system (no me)
+	-movement script (no me)
+	-random spawn (no me)
