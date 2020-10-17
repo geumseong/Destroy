@@ -6,7 +6,7 @@ public class CarSpawner : MonoBehaviour
 {
     public string direction;
     public GameObject car;
-    List<GameObject> spawnPoints = new List<GameObject>();
+    public List<GameObject> spawnPoints = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +22,49 @@ public class CarSpawner : MonoBehaviour
     IEnumerator CarSpawnCoroutine() {
         while(true) {
             int random = Random.Range(1, 9);
-            Vector3 spawnPoint = new Vector3(spawnPoints[random].transform.position.x, spawnPoints[random].transform.position.y, spawnPoints[random].transform.position.z);
+            Vector3 spawnPoint = new Vector3(spawnPoints[random-1].transform.position.x, spawnPoints[random-1].transform.position.y, spawnPoints[random-1].transform.position.z);
             GameObject newCar = Instantiate(car);
             newCar.transform.position = spawnPoint;
-            
-            random = Random.Range(1, 9);
-            spawnPoint = new Vector3(spawnPoints[random].transform.position.x, spawnPoints[random].transform.position.y, spawnPoints[random].transform.position.z);
+            if(random == 1 || random == 2) {
+                newCar.GetComponent<CarMovement>().xAxis = true;
+                newCar.GetComponent<CarMovement>().direction = 1;
+            }
+            else if(random == 3 || random == 4) {
+                newCar.GetComponent<CarMovement>().xAxis = false;
+                newCar.GetComponent<CarMovement>().direction = -1;
+            }
+            else if(random == 5 || random == 6) {
+                newCar.GetComponent<CarMovement>().xAxis = true;
+                newCar.GetComponent<CarMovement>().direction = -1;
+            }
+            else {
+                newCar.GetComponent<CarMovement>().xAxis = false;
+                newCar.GetComponent<CarMovement>().direction = 1;
+            }
+
+            int newRandom = Random.Range(1, 9);
+            while(newRandom == random) {
+                newRandom = Random.Range(1, 9);
+            }
+            spawnPoint = new Vector3(spawnPoints[newRandom-1].transform.position.x, spawnPoints[newRandom-1].transform.position.y, spawnPoints[newRandom-1].transform.position.z);
             newCar = Instantiate(car);
             newCar.transform.position = spawnPoint;
+            if(newRandom == 1 || newRandom == 2) {
+                newCar.GetComponent<CarMovement>().xAxis = true;
+                newCar.GetComponent<CarMovement>().direction = 1;
+            }
+            else if(newRandom == 3 || newRandom == 4) {
+                newCar.GetComponent<CarMovement>().xAxis = false;
+                newCar.GetComponent<CarMovement>().direction = -1;
+            }
+            else if(newRandom == 5 || newRandom == 6) {
+                newCar.GetComponent<CarMovement>().xAxis = true;
+                newCar.GetComponent<CarMovement>().direction = -1;
+            }
+            else {
+                newCar.GetComponent<CarMovement>().xAxis = false;
+                newCar.GetComponent<CarMovement>().direction = 1;
+            }
 
             yield return new WaitForSeconds(5);
         }
