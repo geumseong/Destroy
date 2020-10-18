@@ -28,18 +28,22 @@ public class CarSpawner : MonoBehaviour
             if(random == 1 || random == 2) {
                 newCar.GetComponent<CarMovement>().xAxis = true;
                 newCar.GetComponent<CarMovement>().direction = 1;
+                newCar.GetComponent<CarMovement>().face = "right";
             }
             else if(random == 3 || random == 4) {
                 newCar.GetComponent<CarMovement>().xAxis = false;
                 newCar.GetComponent<CarMovement>().direction = -1;
+                newCar.GetComponent<CarMovement>().face = "down";
             }
             else if(random == 5 || random == 6) {
                 newCar.GetComponent<CarMovement>().xAxis = true;
                 newCar.GetComponent<CarMovement>().direction = -1;
+                newCar.GetComponent<CarMovement>().face = "left";
             }
             else {
                 newCar.GetComponent<CarMovement>().xAxis = false;
                 newCar.GetComponent<CarMovement>().direction = 1;
+                newCar.GetComponent<CarMovement>().face = "up";
             }
 
             int newRandom = Random.Range(1, 9);
@@ -52,18 +56,22 @@ public class CarSpawner : MonoBehaviour
             if(newRandom == 1 || newRandom == 2) {
                 newCar.GetComponent<CarMovement>().xAxis = true;
                 newCar.GetComponent<CarMovement>().direction = 1;
+                newCar.GetComponent<CarMovement>().face = "right";
             }
             else if(newRandom == 3 || newRandom == 4) {
                 newCar.GetComponent<CarMovement>().xAxis = false;
                 newCar.GetComponent<CarMovement>().direction = -1;
+                newCar.GetComponent<CarMovement>().face = "down";
             }
             else if(newRandom == 5 || newRandom == 6) {
                 newCar.GetComponent<CarMovement>().xAxis = true;
                 newCar.GetComponent<CarMovement>().direction = -1;
+                newCar.GetComponent<CarMovement>().face = "left";
             }
             else {
                 newCar.GetComponent<CarMovement>().xAxis = false;
                 newCar.GetComponent<CarMovement>().direction = 1;
+                newCar.GetComponent<CarMovement>().face = "up";
             }
 
             yield return new WaitForSeconds(5);
