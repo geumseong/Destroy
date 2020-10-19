@@ -3,7 +3,8 @@
 	-2D bg
 	-2D trafick lights
 	-particle effect
-	-collision script life system (no me)
-	-point system (no me)
+	-collision script life system (no me) - done
+	-point system (no me) (Lives, Score, CarCount) - done
 	-movement script (no me) - done
 	-random spawn (no me) - done
+	-gameover script

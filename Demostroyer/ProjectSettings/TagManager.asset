@@ -9,6 +9,7 @@ TagManager:
   - traffic2
   - traffic3
   - traffic4
+  - mapEnd
   layers:
   - Default
   - TransparentFX

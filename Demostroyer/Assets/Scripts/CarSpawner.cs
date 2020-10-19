@@ -24,6 +24,7 @@ public class CarSpawner : MonoBehaviour
             int random = Random.Range(1, 9);
             Vector3 spawnPoint = new Vector3(spawnPoints[random-1].transform.position.x, spawnPoints[random-1].transform.position.y, spawnPoints[random-1].transform.position.z);
             GameObject newCar = Instantiate(car);
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().CarCountUp();
             newCar.transform.position = spawnPoint;
             if(random == 1 || random == 2) {
                 newCar.GetComponent<CarMovement>().xAxis = true;
@@ -52,6 +53,7 @@ public class CarSpawner : MonoBehaviour
             }
             spawnPoint = new Vector3(spawnPoints[newRandom-1].transform.position.x, spawnPoints[newRandom-1].transform.position.y, spawnPoints[newRandom-1].transform.position.z);
             newCar = Instantiate(car);
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().CarCountUp();
             newCar.transform.position = spawnPoint;
             if(newRandom == 1 || newRandom == 2) {
                 newCar.GetComponent<CarMovement>().xAxis = true;

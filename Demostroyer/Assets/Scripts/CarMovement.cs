@@ -11,17 +11,11 @@ public class CarMovement : MonoBehaviour
     public string face;
     public Sprite car1;
     public Sprite car2;
-    Vector3 traffic1;
-    Vector3 traffic2;
-    Vector3 traffic3;
-    Vector3 traffic4;
+
     // Start is called before the first frame update
     void Start()
     {
-        traffic1 = GameObject.Find("TrafficCollider1").transform.position;
-        traffic2 = GameObject.Find("TrafficLight1 (1)").transform.position;
-        traffic3 = GameObject.Find("TrafficLight1 (2)").transform.position;
-        traffic4 = GameObject.Find("TrafficLight1 (3)").transform.position;
+
     }
 
     // Update is called once per frame
@@ -116,74 +110,14 @@ public class CarMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "car") {
-            
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().IncreaseScore();
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().CarCountDown();
+            Destroy(gameObject);
         }
-        /*else if(collision.tag == "traffic1") {
-            switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count1 % 4){
-                case 0: //Right
-                    face = "right";
-                    break;
-                case 1: //Left
-                    face = "left";
-                    break;
-                case 2: //Up
-                    face = "up";
-                    break;
-                case 4: //Down
-                    face = "down";
-                    break;
-            }
-        }
-        else if(collision.tag == "traffic2") {
-            switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count2 % 4){
-                case 0: //Right
-                    face = "right";
-                    break;
-                case 1: //Left
-                    face = "left";
-                    break;
-                case 2: //Up
-                    face = "up";
-                    break;
-                case 4: //Down
-                    face = "down";
-                    break;
-            }
-        }
-        else if(collision.tag == "traffic3") {
-            switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count3 % 4){
-                case 0: //Left
-                    face = "left";
-                    break;
-                case 1: //Up
-                    face = "up";
-                    break;
-                case 2: //Down
-                    face = "down";
-                    break;
-                case 4: //Right
-                    face = "right";
-                    break;
-            }
-        }
-        else if(collision.tag == "traffic4") {
-            switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count4 % 4){
-                case 0: //Left
-                    face = "left";
-                    break;
-                case 1: //Up
-                    face = "up";
-                    break;
-                case 2: //Down
-                    face = "down";
-                    break;
-                case 4: //Right
-                    face = "right";
-                    break;
-            }
-        }*/
-        else if(collision.tag == "end"){
-            Destroy(this);
+        else if(collision.tag == "mapEnd"){
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().DecreaseLives();
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().CarCountDown();
+            Destroy(gameObject);
         }
     }
 }
