@@ -1,0 +1,31 @@
+Change log:
+Game 3
+
+2020-10-14:
+	-Bitbucket creation
+	-Unity project creation
+
+2020-10-15:
+	-First game 2D assets added into unity
+
+2020-10-16:
+	-First game 2D assets removed from unity 
+
+2020-10-17:
+	-Seconde game 2D assets added to unity
+	-CarSpawner.cs created
+	-2D assets modified
+	-CarSpawner.cs now spawns more than 2 cars
+	-CarMovement.cs created
+
+2020-10-18:
+	-2D assets of car flipped and duplicated
+	-Main Menu created 
+	-MainMenu scripts and prefabs created
+
+2020-10-19:
+	-ScoreManagement.cs created added to unity
+	-Creation of score UI, lives UI and car count UI
+	-Creation of game over canvas (reload game button and return to menu button)
+	-Creation of pause menu
+	-Edit of CarMovement.cs

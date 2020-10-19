@@ -46,64 +46,80 @@ public class CarMovement : MonoBehaviour
         if(transform.position.x > -6.1 && transform.position.x < -5.5 && transform.position.y < 2.5 && transform.position.y > 1.9) {
             switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count1 % 4){
                 case 0: //Right
-                    face = "right";
+                    if(face != "left")
+                        face = "right";
                     break;
                 case 1: //Left
-                    face = "left";
+                    if(face != "right")
+                        face = "left";
                     break;
                 case 2: //Up
+                    if(face != "down")
                     face = "up";
                     break;
                 case 3: //Down
-                    face = "down";
+                    if(face != "up")
+                        face = "down";
                     break;
             }
         }
         if(transform.position.x > -6.1 && transform.position.x < -5.5 && transform.position.y < -2.38 && transform.position.y > -2.98) {
             switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count2 % 4){
                 case 0: //Right
-                    face = "right";
+                    if(face != "left")
+                        face = "right";
                     break;
                 case 1: //Left
-                    face = "left";
+                    if(face != "right")
+                        face = "left";
                     break;
                 case 2: //Up
+                    if(face != "down")
                     face = "up";
                     break;
                 case 3: //Down
-                    face = "down";
+                    if(face != "up")
+                        face = "down";
                     break;
             }
         }
         if(transform.position.x > 5.01 && transform.position.x < 5.61 && transform.position.y < 2.5 && transform.position.y > 1.9) {
             switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count4 % 4){
                 case 0: //Left
-                    face = "left";
+                    if(face != "right")
+                        face = "left";
                     break;
                 case 1: //Up
-                    face = "up";
+                    if(face != "down")
+                        face = "up";
                     break;
                 case 2: //Down
-                    face = "down";
+                    if(face != "up")
+                        face = "down";
                     break;
                 case 3: //Right
-                    face = "right";
+                    if(face != "left")
+                        face = "right";
                     break;
             }
         }
         if(transform.position.x > 5.01 && transform.position.x < 5.61 && transform.position.y < -2.38 && transform.position.y > -2.98) {
             switch(GameObject.Find("TrafficController").GetComponent<TrafficLight>().count3 % 4){
                 case 0: //Left
-                    face = "left";
+                    if(face != "right")
+                        face = "left";
                     break;
                 case 1: //Up
-                    face = "up";
+                    if(face != "down")
+                        face = "up";
                     break;
                 case 2: //Down
-                    face = "down";
+                    if(face != "up")
+                        face = "down";
                     break;
                 case 3: //Right
-                    face = "right";
+                    if(face != "left")
+                        face = "right";
                     break;
             }
         }
