@@ -11,6 +11,7 @@ public class CarMovement : MonoBehaviour
     public string face;
     public Sprite car1;
     public Sprite car2;
+    public ParticleSystem effect;
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +111,10 @@ public class CarMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "car") {
+            ParticleSystem e = Instantiate(effect);
+            e.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+            e.Play();
+            GameObject.Find("ScoreManager").GetComponent<ScoreManager>().carDestroyedCount();
             GameObject.Find("ScoreManager").GetComponent<ScoreManager>().IncreaseScore();
             GameObject.Find("ScoreManager").GetComponent<ScoreManager>().CarCountDown();
             Destroy(gameObject);

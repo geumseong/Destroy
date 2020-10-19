@@ -1,10 +1,11 @@
 -make it crash
-	-2D car 
-	-2D bg
-	-2D trafick lights
-	-particle effect
+	-2D car - done
+	-2D bg - done
+	-2D trafick lights - done
+	-particle effect - done
 	-collision script life system (no me) - done
 	-point system (no me) (Lives, Score, CarCount) - done
 	-movement script (no me) - done
 	-random spawn (no me) - done
-	-gameover script
+	-gameover script - done
+	-no u turn script
